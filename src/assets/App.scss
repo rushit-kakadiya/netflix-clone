@@ -1,0 +1,161 @@
+.arrow {
+  background: #000;
+  height: 3px;
+  width: 30px;
+  margin: 0 auto;
+  position: relative;
+  cursor: pointer;
+
+  &:before,
+  &:after {
+    content: "";
+    background: #000;
+    position: absolute;
+    height: 3px;
+    width: 15px;
+  }
+
+  &:before {
+    right: -3px;
+    bottom: -4px;
+    transform: rotate(-45deg);
+  }
+
+  &:after {
+    right: -3px;
+    top: -4px;
+    transform: rotate(45deg);
+  }
+}
+
+#animation2 {
+  display: none;
+
+  & + label > .arrow {
+    &:before {
+      animation: animation-2-before-reverse 1s ease 0s 1 alternate both;
+    }
+
+    &:after {
+      animation: animation-2-after-reverse 1s ease 0s 1 alternate both;
+    }
+  }
+
+  &:checked {
+    & + label > .arrow {
+      &:before {
+        animation: animation-2-before 1s ease 0s 1 alternate both;
+      }
+
+      &:after {
+        animation: animation-2-after 1s ease 0s 1 alternate both;
+      }
+    }
+  }
+}
+
+@keyframes animation-2-after {
+  0% {
+    right: -3px;
+    top: -4px;
+    transform: rotate(45deg);
+    background: blue;
+  }
+
+  50% {
+    width: 3px;
+    border-radius: 50%;
+    top: 20px;
+    left: 15px;
+  }
+
+  100% {
+    left: -3px;
+    bottom: -4px;
+    transform: rotate(135deg);
+    height: 3px;
+    width: 15px;
+    background: #000;
+  }
+}
+@keyframes animation-2-before {
+  0% {
+    right: -3px;
+    bottom: -4px;
+    transform: rotate(-45deg);
+    background: red;
+  }
+
+  50% {
+    width: 3px;
+    border-radius: 50%;
+    bottom: 20px;
+    left: 15px;
+  }
+
+  100% {
+    left: -3px;
+    bottom: -4px;
+    transform: rotate(-135deg);
+    height: 3px;
+    width: 15px;
+    background: #000;
+  }
+}
+@keyframes animation-2-after-reverse {
+  0% {
+    left: -3px;
+    bottom: -4px;
+    transform: rotate(135deg);
+    height: 3px;
+    width: 15px;
+    background: #000;
+  }
+
+  50% {
+    width: 3px;
+    border-radius: 50%;
+    top: 20px;
+    left: 15px;
+    background: red;
+  }
+
+  100% {
+    right: -3px;
+    top: -4px;
+    transform: rotate(45deg);
+    background: #000;
+  }
+}
+@keyframes animation-2-before-reverse {
+  0% {
+    left: -3px;
+    bottom: -4px;
+    transform: rotate(-135deg);
+    height: 3px;
+    width: 15px;
+    background: #000;
+  }
+
+  50% {
+    width: 3px;
+    border-radius: 50%;
+    bottom: 20px;
+    left: 15px;
+    background: blue;
+  }
+
+  100% {
+    right: -3px;
+    bottom: -4px;
+    transform: rotate(-45deg);
+    background: #000;
+  }
+}
+
+.arrow_label {
+  margin-bottom: 100px;
+  display: block;
+}
+
+

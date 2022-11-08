@@ -1,0 +1,56 @@
+body {
+  color-scheme: light dark !important;
+  color: rgba(255, 255, 255, 0.87) !important;
+  background-color: #242424 !important;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    color: #213547 !important;
+    background-color: #ffffff !important;
+  }
+}
+
+:is(body, .catalog_row)::-webkit-scrollbar {
+  --webkit-appearance: none;
+}
+
+:is(body, .catalog_row)::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid #000;
+  background-color: #fff;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+:is(body, .catalog_row)::-webkit-scrollbar:vertical {
+  width: 8px;
+}
+:is(body, .catalog_row)::-webkit-scrollbar:horizontal {
+  height: 8px;
+}
+:is(body, .catalog_row)::-webkit-scrollbar-track {
+  background-color: #000;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.page_center {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.catalog_row {
+  overflow-x: auto !important;
+  white-space: nowrap !important;
+}
+
+@import "bootstrap/scss/bootstrap";
